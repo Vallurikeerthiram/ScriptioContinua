@@ -4,7 +4,7 @@
 
 ---
 
-## ðŸš€ Key Features
+## 🚀 Key Features
 
 - **Automated Data Pipeline**: Multi-domain Wikipedia scraper with built-in deduplication (SHA256) and character-level transformation.
 - **Neural Segmentation Suite**: Five character-level sequence labeling models (BiLSTM, CNN, CRF, GRU, RNN).
@@ -14,28 +14,28 @@
 
 ---
 
-## ðŸ“‚ Project Architecture
+## 📂 Project Architecture
 
 ```text
 ScriptioContinua/
-â”œâ”€â”€ dataset/                  # Data Generation & ETL
-â”‚   â”œâ”€â”€ pullArticles.py       # Wikipedia scraper (Domain-specific)
-â”‚   â”œâ”€â”€ Preprocessing.py      # Transformation & Statistics extraction
-â”‚   â””â”€â”€ graphs.py             # Data distribution analysis
-â”œâ”€â”€ plain DL/                 # Deep Learning Module
-â”‚   â”œâ”€â”€ train_models.py       # Unified training/eval framework (PyTorch)
-â”‚   â”œâ”€â”€ SENT_based_split.xlsx # Structured dataset for modeling
-â”‚   â””â”€â”€ code.py               # Preprocessing utilities
-â””â”€â”€ dictionary based/         # Algorithmic Module
-    â”œâ”€â”€ dict/
-    â”‚   â”œâ”€â”€ universal_trie.py # Semantic Trie engine (Strict validation)
-    â”‚   â””â”€â”€ *.csv, *.txt      # Lexical datasets (Moby POS, 1M Web Words)
-    â””â”€â”€ SENT_based_split.xlsx # Validation ground truth
+├── dataset/                  # Data Generation & ETL
+│   ├── pullArticles.py       # Wikipedia scraper (Domain-specific)
+│   ├── Preprocessing.py      # Transformation & Statistics extraction
+│   └── graphs.py             # Data distribution analysis
+├── plain DL/                 # Deep Learning Module
+│   ├── train_models.py       # Unified training/eval framework (PyTorch)
+│   ├── SENT_based_split.xlsx # Structured dataset for modeling
+│   └── code.py               # Preprocessing utilities
+└── dictionary based/         # Algorithmic Module
+    ├── dict/
+    │   ├── universal_trie.py # Semantic Trie engine (Strict validation)
+    │   └── *.csv, *.txt      # Lexical datasets (Moby POS, 1M Web Words)
+    └── SENT_based_split.xlsx # Validation ground truth
 ```
 
 ---
 
-## ðŸ› ï¸ Technical Stack
+## 🛠️ Technical Stack
 
 - **Core**: Python 3.8+
 - **Deep Learning**: PyTorch
@@ -45,7 +45,7 @@ ScriptioContinua/
 
 ---
 
-## ðŸ§ª Detailed Methodology
+## 🧪 Detailed Methodology
 
 ### 1. Data Transformation (The ETL Phase)
 The system retrieves diverse articles from Simple Wikipedia and transforms them into "Scriptio Continua" state:
@@ -66,7 +66,7 @@ A custom-built `UniversalTrie` acts as a verification engine. A word is only "ac
 
 ---
 
-## ðŸƒ Getting Started
+## 🏃 Getting Started
 
 ### 1. Installation
 ```bash
@@ -86,7 +86,7 @@ pip install torch pandas requests beautifulsoup4 nltk bert-score openpyxl
 
 ---
 
-## ðŸ“Š Evaluation Metrics
+## 📊 Evaluation Metrics
 
 The project benchmarks all models against:
 - **Sequence Metrics**: Accuracy, Precision, Recall, and F1-Score of the predicted labels.
