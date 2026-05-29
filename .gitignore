@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.xlsx
+*.csv
+*.pdf
+*.jsonl
+*.md_cache
+*.pyc
+venv/
+LLmodels/
+wrong_run/
+results/plots/
+results/spreadsheets/
+model graphs/
+*.docx

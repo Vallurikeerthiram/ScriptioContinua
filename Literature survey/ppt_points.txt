@@ -1,0 +1,29 @@
+1.) The study shows that a self-supervised hierarchical transformer can accurately segment Scriptio Continua Greek and Latin texts without manual annotations, clearly outperforming Bayesian and single-level neural methods, though segmentation of highly abbreviated artifacts like Byzantine seals remains an open challenge.
+
+
+2.)They used instruction-based fine-tuning of a pretrained causal language model with character-level masked reconstruction and beam search, and this instruction-tuned LLaMA approach worked best for text restoration, outperforming the Ithaca model.
+
+
+3.)The paper uses radical-based character representations (Radical2Vector) combined with SikuRoBERTa embeddings and applies a BiLSTM-CRF joint labeling model with integrated B/I/E/S and POS tags, and this joint radical-enhanced BiLSTM-CRF approach works best compared to sequential or non-radical methods.
+
+
+4.)The authors used qualitative textual analysis, historical contextual analysis, and performance-based interpretation of Platonic dialogues, and found that the rhapsodic, single-reader performance model with interactive discussion best explains Plato’s pedagogical method in the Academy.
+
+
+5.)They used modified BPE and Unigram tokenisation by treating spaces as separate tokens, and the modified Unigram method without spaces worked best, giving the highest morphological correctness and best downstream performance on complex-word tasks.
+
+
+6.)Deep learning methods (CNN, BiLSTM, Transformer) worked best for Thai NLP, especially for word segmentation, while downstream tasks like parsing and semantic analysis still rely on weaker traditional approaches.
+
+
+7.)They applied LSTM, Bi-LSTM with attention, and Transformer for canonical segmentation, and CRF-based models for surface segmentation.
+Transformer achieved the best canonical results, while feature-based CRF gave the highest surface segmentation accuracy.
+
+
+8.)They used character-level fastText embeddings with a CNN + BiLSTM model, which worked best for naturally inserting spaces in noisy Korean text while preserving user intent 
+
+
+9.)They used lattice-based morphological analysis with a linear feature model, an RNN language model, and trimmed beam search, and the best-performing version is Juman++ V2 with RNN.
+
+
+10.)The study used epigraphic, comparative, and chronological analysis of ancient inscriptions, and epigraphic comparative analysis worked best because physical evid.ence consistently shows word separation in early Hebrew texts

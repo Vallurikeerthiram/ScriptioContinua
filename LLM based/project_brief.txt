@@ -1,0 +1,21 @@
+Project: scriptio continua restoration for an English sentence-level dataset.
+
+Dataset facts:
+- Input sentences come from the SENT_ID.xlsx workbook.
+- SCRIPT_CONTIN is lowercase scriptio continua built by removing spaces, punctuation, and non a-z0-9 characters.
+- SENT_ORI is the original sentence.
+- STATE_2 marks word ends with 0 and 1 labels.
+- STATE_4 uses BIES labels per character.
+
+What the model should do:
+- Use only few-shot behavior from train examples. Do not train or fine-tune.
+- Preserve the exact character order of the input script when normalized.
+- Help with three task styles:
+  1. Direct sentence restoration.
+  2. Per-character 0/1 labeling.
+  3. Per-character BIES labeling.
+
+Output discipline:
+- Be deterministic and concise.
+- Return only the requested JSON.
+- Do not explain the answer.
