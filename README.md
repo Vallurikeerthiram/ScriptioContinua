@@ -1,23 +1,71 @@
-# ScriptioContinua: Word Segmentation for English Scriptio Continua
+# Scriptio Continua: Word Segmentation Framework
 
-This project focuses on the restoration of spaces in English text that has been converted to "Scriptio Continua" (text without spaces, punctuation, or capitalization). It explores various methodologies for word segmentation, including dictionary-based models, deep learning architectures (including CRF), and Large Language Model (LLM) few-shot prompting.
+**Scriptio Continua** is a comprehensive research project designed to solve the automated word segmentation problem for continuous character strings in English. This framework evaluates and compares modern **Deep Learning Sequence Tagging** architectures, **Dictionary-Driven Semantic Trie validation**, and **Few-Shot Large Language Model (LLM)** prompting.
 
-## Project Structure
+---
 
-- **`DATASET/`**: Contains scripts and raw data for creating the dataset from Simple Wikipedia.
-- **`dict based model/`**: Implements word segmentation using dictionary-driven approaches and word likelihood validators.
-- **`Models/`**: Contains Deep Learning models, including plain neural networks and Conditional Random Fields (CRF) for sequence labeling.
-- **`LLM based/`**: A pipeline for few-shot word segmentation using Large Language Models via Ollama.
+## 🚀 Key Features
+
+- **Automated Data Pipeline**: Multi-domain Wikipedia scraper with built-in deduplication (SHA256) and character-level transformation.
+- **Neural Segmentation Suite**: Character-level sequence labeling models including BiLSTM, CNN, CRF, GRU, and RNN.
+- **LLM Few-Shot Pipeline**: Leverages models like Qwen and Gemma via Ollama for direct restoration and state labeling without fine-tuning.
+- **Semantic Validation Engine**: A high-precision Trie that verifies word candidates against lexical definitions and Part-of-Speech (POS) tags.
+- **Dual Labeling Schemes**: Support for both Binary (Boundary/Non-boundary) and BIES (Begin, Inside, End, Single) tagging.
+- **Exhaustive Benchmarking**: Rigorous evaluation using standard NLP metrics: BLEU, METEOR, ROUGE-L, and BERTScore.
+
+---
+
+## 📂 Project Architecture
+
+- **`DATASET/`**: Automated data generation and ETL (Scraping, Transformation, Statistics).
+- **`dict based model/`**: Algorithmic module using a Semantic Trie engine and various word-likelihood validators (orthographic, phonotactic, pronounceability).
+- **`Models/`**: Deep Learning module containing plain neural networks (BiLSTM, GRU, etc.) and CRF-enhanced architectures.
+- **`LLM based/`**: Few-shot prompting pipeline for word segmentation using Large Language Models via Ollama.
 - **`Literature survey/`**: Collection of research papers and reports related to word segmentation and scriptio continua.
 - **`extras/`**: Utility scripts for generating metrics and processing workbooks.
-- **`scripts/`**: Miscellaneous shell scripts for automation.
+- **`scripts/`**: Miscellaneous automation and utility scripts.
 
-## Key Methodologies
+---
 
-1.  **Dictionary-Based**: Uses a trie-based dictionary and various validators (orthographic, phonotactic, pronounceability) to identify valid word boundaries.
-2.  **Deep Learning**: Employs sequence labeling techniques where each character is classified (e.g., 0/1 for word ends or BIES for Beginning, Inside, End, Single-word).
-3.  **LLM Few-Shot**: Leverages the zero/few-shot capabilities of models like Qwen and Gemma to restore sentences directly or provide state labels.
+## 🛠️ Technical Stack
 
-## Getting Started
+- **Core**: Python 3.8+
+- **Deep Learning**: PyTorch, TensorFlow/Keras
+- **LLM Interface**: Ollama
+- **Data Analysis**: Pandas, NumPy, OpenPyXL
+- **Natural Language Processing**: NLTK, BeautifulSoup4, `bert-score`, `wordfreq`, `g2p_en`
+- **Scraping & Utilities**: Requests, TQDM, Hashlib
 
-Refer to the README files within each subdirectory for specific instructions on running the models and processing the data.
+---
+
+## 🏃 Getting Started
+
+### 1. Installation
+```bash
+# Clone the repository
+git clone https://github.com/Vallurikeerthiram/ScriptioContinua.git
+cd ScriptioContinua
+
+# Install dependencies
+pip install torch pandas requests beautifulsoup4 nltk bert-score openpyxl wordfreq g2p_en
+```
+
+### 2. End-to-End Pipeline
+1.  **Scrape**: Run `python DATASET/pullArticles.py` to build the raw corpus.
+2.  **Preprocess**: Run `python DATASET/Preprocessing.py` to create the Scriptio Continua dataset.
+3.  **Train DL Models**: Navigate to `Models/plain DL models/` or `Models/DL models_CRF/` and run the respective training scripts.
+4.  **Run LLM Pipeline**: Navigate to `LLM based/` and use the `run_typeX.py` scripts with Ollama.
+5.  **Dictionary Validation**: Explore `dict based model/valid word finder/` for dictionary and pronounceability-based segmentation.
+
+---
+
+## 📊 Evaluation Metrics Benchmarking
+
+The project benchmarks all models against:
+- **Sequence Metrics**: Accuracy, Precision, Recall, and F1-Score of the predicted labels.
+- **Reconstruction Metrics**: 
+    - **BLEU / ROUGE / METEOR**: Overlap and alignment between reconstructed and original text.
+    - **BERTScore**: Semantic similarity using contextual embeddings.
+
+---
+**Maintained by:** [Valluri Keerthi Ram](https://github.com/Vallurikeerthiram)
