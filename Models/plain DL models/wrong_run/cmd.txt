@@ -1,0 +1,586 @@
+(.venv) c:\Users\kamma\OneDrive - Amrita vishwa vidyapeetham\Project_Phase\Models\2nd run>.\.venv\Scripts\python.exe code.py
+Using device: cuda (NVIDIA GeForce RTX 4060 Laptop GPU)
+Embedding choice for all models: trainable character embedding with the same vocabulary, dimension, and initialization.
+
+Training BILSTM on STATE2 ...
+[STATE2][BiLSTMTagger] epoch=1 train_loss=0.4031 val_loss=0.2900 val_f1=0.8007
+[STATE2][BiLSTMTagger] epoch=2 train_loss=0.2639 val_loss=0.2186 val_f1=0.8647
+[STATE2][BiLSTMTagger] epoch=3 train_loss=0.2048 val_loss=0.1670 val_f1=0.9027
+[STATE2][BiLSTMTagger] epoch=4 train_loss=0.1666 val_loss=0.1390 val_f1=0.9223
+[STATE2][BiLSTMTagger] epoch=5 train_loss=0.1462 val_loss=0.1232 val_f1=0.9312
+[STATE2][BiLSTMTagger] epoch=6 train_loss=0.1323 val_loss=0.1125 val_f1=0.9382
+[STATE2][BiLSTMTagger] epoch=7 train_loss=0.1218 val_loss=0.1039 val_f1=0.9440
+[STATE2][BiLSTMTagger] epoch=8 train_loss=0.1139 val_loss=0.0982 val_f1=0.9478
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 6155.34it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 3992.83it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12422.60it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training RNN on STATE2 ...
+[STATE2][RNNTagger] epoch=1 train_loss=0.3582 val_loss=0.3080 val_f1=0.7919
+[STATE2][RNNTagger] epoch=2 train_loss=0.3078 val_loss=0.2816 val_f1=0.8115
+[STATE2][RNNTagger] epoch=3 train_loss=0.2741 val_loss=0.2472 val_f1=0.8358
+[STATE2][RNNTagger] epoch=4 train_loss=0.2469 val_loss=0.2163 val_f1=0.8709
+[STATE2][RNNTagger] epoch=5 train_loss=0.2192 val_loss=0.1885 val_f1=0.8876
+[STATE2][RNNTagger] epoch=6 train_loss=0.1971 val_loss=0.1678 val_f1=0.9017
+[STATE2][RNNTagger] epoch=7 train_loss=0.1805 val_loss=0.1508 val_f1=0.9141
+[STATE2][RNNTagger] epoch=8 train_loss=0.1678 val_loss=0.1401 val_f1=0.9212
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 9414.69it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 3889.98it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 8720.57it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training CNN on STATE2 ...
+[STATE2][CNNTagger] epoch=1 train_loss=0.3911 val_loss=0.3044 val_f1=0.7872
+[STATE2][CNNTagger] epoch=2 train_loss=0.2975 val_loss=0.2689 val_f1=0.8200
+[STATE2][CNNTagger] epoch=3 train_loss=0.2785 val_loss=0.2537 val_f1=0.8354
+[STATE2][CNNTagger] epoch=4 train_loss=0.2673 val_loss=0.2451 val_f1=0.8408
+[STATE2][CNNTagger] epoch=5 train_loss=0.2623 val_loss=0.2410 val_f1=0.8416
+[STATE2][CNNTagger] epoch=6 train_loss=0.2590 val_loss=0.2387 val_f1=0.8430
+[STATE2][CNNTagger] epoch=7 train_loss=0.2565 val_loss=0.2364 val_f1=0.8468
+[STATE2][CNNTagger] epoch=8 train_loss=0.2546 val_loss=0.2344 val_f1=0.8471
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12336.65it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 2041.60it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 14068.78it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training GRU on STATE2 ...
+[STATE2][GRUTagger] epoch=1 train_loss=0.3805 val_loss=0.2803 val_f1=0.8111
+[STATE2][GRUTagger] epoch=2 train_loss=0.2564 val_loss=0.2101 val_f1=0.8712
+[STATE2][GRUTagger] epoch=3 train_loss=0.1974 val_loss=0.1612 val_f1=0.9082
+[STATE2][GRUTagger] epoch=4 train_loss=0.1623 val_loss=0.1349 val_f1=0.9242
+[STATE2][GRUTagger] epoch=5 train_loss=0.1419 val_loss=0.1194 val_f1=0.9339
+[STATE2][GRUTagger] epoch=6 train_loss=0.1275 val_loss=0.1082 val_f1=0.9409
+[STATE2][GRUTagger] epoch=7 train_loss=0.1172 val_loss=0.1001 val_f1=0.9459
+[STATE2][GRUTagger] epoch=8 train_loss=0.1093 val_loss=0.0938 val_f1=0.9498
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 24889.54it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12143.65it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12379.15it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training CRF on STATE2 ...
+[STATE2][CRFTagger] epoch=1 train_loss=37.7944 val_loss=35.1042 val_f1=0.5595
+[STATE2][CRFTagger] epoch=2 train_loss=34.8485 val_loss=34.1830 val_f1=0.5733
+[STATE2][CRFTagger] epoch=3 train_loss=34.1243 val_loss=33.6326 val_f1=0.6116
+[STATE2][CRFTagger] epoch=4 train_loss=33.6591 val_loss=33.2473 val_f1=0.6254
+[STATE2][CRFTagger] epoch=5 train_loss=33.3348 val_loss=33.0135 val_f1=0.6269
+[STATE2][CRFTagger] epoch=6 train_loss=33.1282 val_loss=32.8393 val_f1=0.6277
+[STATE2][CRFTagger] epoch=7 train_loss=32.9666 val_loss=32.7164 val_f1=0.6280
+[STATE2][CRFTagger] epoch=8 train_loss=32.8520 val_loss=32.6251 val_f1=0.6288
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 24670.51it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 6125.69it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 13148.39it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training BILSTM on STATE4 ...
+[STATE4][BiLSTMTagger] epoch=1 train_loss=0.7972 val_loss=0.5674 val_f1=0.5582
+[STATE4][BiLSTMTagger] epoch=2 train_loss=0.5166 val_loss=0.4244 val_f1=0.6874
+[STATE4][BiLSTMTagger] epoch=3 train_loss=0.4037 val_loss=0.3307 val_f1=0.7517
+[STATE4][BiLSTMTagger] epoch=4 train_loss=0.3362 val_loss=0.2801 val_f1=0.7855
+[STATE4][BiLSTMTagger] epoch=5 train_loss=0.2931 val_loss=0.2464 val_f1=0.8115
+[STATE4][BiLSTMTagger] epoch=6 train_loss=0.2640 val_loss=0.2230 val_f1=0.8295
+[STATE4][BiLSTMTagger] epoch=7 train_loss=0.2426 val_loss=0.2066 val_f1=0.8414
+[STATE4][BiLSTMTagger] epoch=8 train_loss=0.2265 val_loss=0.1951 val_f1=0.8466
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12000.47it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12419.48it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12392.69it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training RNN on STATE4 ...
+[STATE4][RNNTagger] epoch=1 train_loss=0.7062 val_loss=0.5735 val_f1=0.5904
+[STATE4][RNNTagger] epoch=2 train_loss=0.5634 val_loss=0.4991 val_f1=0.6607
+[STATE4][RNNTagger] epoch=3 train_loss=0.4868 val_loss=0.4152 val_f1=0.6902
+[STATE4][RNNTagger] epoch=4 train_loss=0.4196 val_loss=0.3532 val_f1=0.7353
+[STATE4][RNNTagger] epoch=5 train_loss=0.3802 val_loss=0.3422 val_f1=0.7543
+[STATE4][RNNTagger] epoch=6 train_loss=0.3473 val_loss=0.2897 val_f1=0.7846
+[STATE4][RNNTagger] epoch=7 train_loss=0.3224 val_loss=0.2696 val_f1=0.8009
+[STATE4][RNNTagger] epoch=8 train_loss=0.3058 val_loss=0.2561 val_f1=0.8047
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 9899.73it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 21655.71it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 8295.88it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training CNN on STATE4 ...
+[STATE4][CNNTagger] epoch=1 train_loss=0.7918 val_loss=0.6343 val_f1=0.5158
+[STATE4][CNNTagger] epoch=2 train_loss=0.6207 val_loss=0.5566 val_f1=0.5592
+[STATE4][CNNTagger] epoch=3 train_loss=0.5786 val_loss=0.5245 val_f1=0.5938
+[STATE4][CNNTagger] epoch=4 train_loss=0.5551 val_loss=0.5038 val_f1=0.6209
+[STATE4][CNNTagger] epoch=5 train_loss=0.5410 val_loss=0.4918 val_f1=0.6381
+[STATE4][CNNTagger] epoch=6 train_loss=0.5333 val_loss=0.4858 val_f1=0.6532
+[STATE4][CNNTagger] epoch=7 train_loss=0.5262 val_loss=0.4805 val_f1=0.6526
+[STATE4][CNNTagger] epoch=8 train_loss=0.5220 val_loss=0.4764 val_f1=0.6626
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 24623.60it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 16598.01it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12262.20it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training GRU on STATE4 ...
+[STATE4][GRUTagger] epoch=1 train_loss=0.7424 val_loss=0.5333 val_f1=0.5946
+[STATE4][GRUTagger] epoch=2 train_loss=0.4870 val_loss=0.3921 val_f1=0.6938
+[STATE4][GRUTagger] epoch=3 train_loss=0.3753 val_loss=0.3088 val_f1=0.7534
+[STATE4][GRUTagger] epoch=4 train_loss=0.3137 val_loss=0.2607 val_f1=0.7916
+[STATE4][GRUTagger] epoch=5 train_loss=0.2747 val_loss=0.2301 val_f1=0.8113
+[STATE4][GRUTagger] epoch=6 train_loss=0.2479 val_loss=0.2098 val_f1=0.8336
+[STATE4][GRUTagger] epoch=7 train_loss=0.2284 val_loss=0.1944 val_f1=0.8453
+[STATE4][GRUTagger] epoch=8 train_loss=0.2126 val_loss=0.1828 val_f1=0.8539
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12350.48it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12273.09it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 12350.19it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Training CRF on STATE4 ...
+[STATE4][CRFTagger] epoch=1 train_loss=71.6227 val_loss=59.8528 val_f1=0.3851
+[STATE4][CRFTagger] epoch=2 train_loss=56.6196 val_loss=52.6146 val_f1=0.4117
+[STATE4][CRFTagger] epoch=3 train_loss=50.1148 val_loss=47.0673 val_f1=0.4562
+[STATE4][CRFTagger] epoch=4 train_loss=45.2037 val_loss=42.8580 val_f1=0.4599
+[STATE4][CRFTagger] epoch=5 train_loss=41.4898 val_loss=39.6715 val_f1=0.4666
+[STATE4][CRFTagger] epoch=6 train_loss=38.6979 val_loss=37.2565 val_f1=0.4755
+[STATE4][CRFTagger] epoch=7 train_loss=36.5502 val_loss=35.3629 val_f1=0.4764
+[STATE4][CRFTagger] epoch=8 train_loss=34.8800 val_loss=33.8828 val_f1=0.4771
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 24206.04it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 4915.64it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights: 100%|████████████████████████████████████████████████████████████| 389/389 [00:00<00:00, 17302.24it/s]
+RobertaModel LOAD REPORT from: roberta-large
+Key                             | Status     |
+--------------------------------+------------+-
+lm_head.dense.weight            | UNEXPECTED |
+lm_head.layer_norm.weight       | UNEXPECTED |
+lm_head.dense.bias              | UNEXPECTED |
+lm_head.layer_norm.bias         | UNEXPECTED |
+lm_head.bias                    | UNEXPECTED |
+roberta.embeddings.position_ids | UNEXPECTED |
+pooler.dense.weight             | MISSING    |
+pooler.dense.bias               | MISSING    |
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING       :those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Finished. Output written to: C:\Users\kamma\OneDrive - Amrita vishwa vidyapeetham\Project_Phase\Models\2nd run\model_comparison_results.xlsx
