@@ -1,15 +1,39 @@
+# Python virtual environments & packages
 .venv/
-__pycache__/
-*.xlsx
-*.csv
-*.pdf
-*.jsonl
-*.md_cache
-*.pyc
 venv/
-LLmodels/
-wrong_run/
-results/plots/
-results/spreadsheets/
-model graphs/
-*.docx
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Bytecode & Caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secret and environment configuration files
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# OS & IDE junk
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Large prediction result spreadsheets exceeding GitHub 100MB file limit
+DATASET/18000 rows/new dataset/SENT_ID_coh_results.xlsx
+DATASET/18000 rows/new dataset/SENT_ID_gs_results.xlsx
+DATASET/18000 rows/new dataset/SENT_ID_lm_results.xlsx
+dict based model/valid word finder/results/spreadsheets/orthographic_cm_test_results.xlsx
+dict based model/valid word finder/results/spreadsheets/orthographic_coh_test_results.xlsx
+dict based model/valid word finder/results/spreadsheets/orthographic_gs_test_results.xlsx
+dict based model/valid word finder/results/spreadsheets/orthographic_lm_test_results.xlsx
