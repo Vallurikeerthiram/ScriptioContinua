@@ -1,59 +1,106 @@
-# Phase 2: Multi-Sentence, Line-Oriented & Cross-Lingual Scriptio Continua
+# Phase 2: Multi-Sentence, Line-Oriented, Hybrid Transformers, and Telugu Scriptio Continua
 
-This directory contains experimental artifacts, datasets, neural sequence tagging models, CRF decoders, and cross-lingual evaluation pipelines for **Phase 2** of the Scriptio Continua research project.
-
-> [!NOTE]
-> This branch is an active **Beta / Work-in-Progress** release for Phase 2 experiments.
+Phase 2 advances the *Scriptio Continua* research framework from isolated sentence processing into complex document-like conditions, hybrid transformer-neural architectures, and cross-lingual Indic script segmentation.
 
 ---
 
-## Directory Structure
+## Technical Overview
+
+While Phase 1 investigated baseline word boundary restoration on isolated, clean English sentences, Phase 2 tackles real-world complexities encountered in digitized archives, manuscripts, and non-Latin scripts:
+
+1. **Document-Level & Line-Oriented Word Segmentation**: Testing neural taggers on fixed-length 50-character chunks with line wrapping and arbitrary sentence splits.
+2. **Hybrid Transformer Sentence Break Recovery**: Deploying 16 hybrid combinations of character-level sequence taggers (BiLSTM, BiGRU, BiRNN, 1D-CNN) and pretrained Transformer backbones (BERT, RoBERTa, DeBERTa-v3, ELECTRA) with CRF decoding to jointly predict word boundaries and sentence breaks.
+3. **Telugu Cross-Lingual Expansion**: Extending the framework to Telugu, an agglutinative Dravidian language requiring akshara-level phonetic tokenization, complex conjunct handling, and dedicated vocabulary representations.
+
+---
+
+## Directory Organization
 
 ```text
 Phase 2/
 |-- English/
-|   |-- 50_Characters/              # Line-oriented / multi-sentence experiments (50-char window)
-|   |   |-- 2state_4state.py         # Standard neural sequence taggers (BiLSTM, GRU, RNN, CNN)
-|   |   |-- 4state_CRF.py            # CRF-enhanced BIES sequence decoder
-|   |   |-- 2000_articles_50_character_dataset_ART_ID_split_70_15_15.xlsx
-|   |   |-- dataset/                 # 2000-article 50-character source dataset
-|   |   `-- Output Analysis/         # Detailed prediction analysis workbooks
+|   |-- Dataset/                    # 2,000-article Simple Wikipedia corpus and split datasets
+|   |   |-- 2000 articles simple_wikipedia_random_domain_dataset.xlsx
+|   |   `-- 2000_articles_50_character_dataset_ART_ID_split_70_15_15 (2).xlsx
 |   |
-|   |-- Sentence_Level/             # Sentence-level reference experiments
-|   |   |-- 2state_4state.py         # Sentence-wise neural sequence taggers
-|   |   |-- 4state_crf.py            # Sentence-wise CRF models
-|   |   |-- Sent_based_split.xlsx    # Sentence-based train/val/test splits
-|   |   `-- Dataset/                 # Sorted sentence dataset with paragraph IDs
+|   |-- Sentence Segmentation/      # Hybrid Transformer + Neural + CRF models
+|   |   |-- dataset/                # 50-character line dataset
+|   |   |-- notebook and code files/# Training notebooks for recurrent and CNN models
+|   |   `-- results/                # 16 hybrid model results & All_16_Models_Summary.xlsx
 |   |
-|   `-- Dataset/                    # Raw Simple Wikipedia 2000-article domain dataset
+|   `-- Word Segmentation/          # Word boundary recovery across settings
+|       |-- 50_Characters/          # 50-character window line-level models & outputs
+|       |-- Sentence_Level/         # Sentence-bounded reference baseline
+|       `-- Dataset/                # Full article and sorted sentence datasets
 |
-`-- Telugu/                         # Cross-lingual expansion to Indic continuous script
-    |-- dataset/                    # Telugu sentence-level dataset (first 100 articles)
-    |-- pkl/                        # Trained model weights & vocabularies
-    |   |-- 2_state/                # Binary state models (BiLSTM, GRU, RNN, CNN, vocab)
-    |   |-- 4_state/                # BIES 4-state models (BiLSTM, GRU, RNN, CNN, vocab)
-    |   `-- 4_state_crf/            # BIES + CRF models (BiLSTM, GRU, RNN, CNN, vocab)
-    |-- results_with_metrics/       # Evaluation metrics spreadsheets
-    |-- results_without_metrics/    # Raw prediction outputs
-    |-- telugu2-state.ipynb         # 2-state training & evaluation notebook
-    |-- telugu4-state.ipynb         # 4-state BIES training & evaluation notebook
-    `-- telugu4-state-crf.ipynb     # 4-state CRF training & evaluation notebook
+`-- Telugu/
+    |-- Complete Dataset/           # Production-scale corpus (14,480 sentences, 5 lakh aksharas)
+    |   |-- dataset/                # 70/15/15 sentence split
+    |   |-- Detailed Results and Analysis/ # Character, complexity, and sentence workbooks
+    |   |-- model predictions without metrics/ # Raw prediction spreadsheets
+    |   |-- notebooks and code files/# Saved PyTorch weights (.pkl) and notebooks
+    |   |-- results summaries/      # Aggregated metric workbooks and CSV files
+    |   |-- count_unique_telugu.py  # Akshara tokenization regex script
+    |   `-- telugu_akshara_frequencies.xlsx
+    |
+    `-- sample dataset work/        # 100-article prototype track
+        |-- dataset/                # Initial sample split
+        |-- pkl/                    # Prototype model weights
+        |-- results_with_metrics/   # Prototype evaluation workbooks
+        `-- notebooks (.ipynb)      # Interactive 2-state, 4-state, and CRF notebooks
 ```
 
 ---
 
-## Key Experimental Focus Areas
+## Key Experimental Results
 
-### 1. English Line-Oriented (50 Characters)
-Evaluates character-level word-boundary recovery on fixed-width continuous lines with potential line wraps and multi-sentence spans. Compares:
-- Binary boundary state (`STATE_2`) vs. BIES boundary state (`STATE_4`).
-- Plain neural architectures (BiLSTM, BiGRU, Bidirectional Vanilla RNN, CNN) vs. Linear-Chain CRF decoding.
+### 1. English Sentence Segmentation Benchmark (16 Hybrid Models)
 
-### 2. English Sentence-Level Baseline
-Reference benchmarks on sentence-bounded continuous text without line wrapping, establishing upper-bound segmentation performance under clean boundaries.
+Evaluated on the test split of the 2,000-article dataset:
 
-### 3. Telugu Cross-Lingual Evaluation
-Evaluates the continuous script segmentation workflow on Telugu, exploring:
-- Akshara and Unicode character-level boundary prediction.
-- Morphological and orthographic challenges in agglutinative Indic scripts.
-- Pre-trained model weights saved as pickle files (`.pkl`) ready for evaluation and inference.
+| Architecture (Layer 1) | Transformer Backbone (Layer 2) | Overall F1 | Overall Acc | Sent Break F1 | Sent Break Acc | Exact Match | BLEU | BERTScore F1 |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **CNN + CRF** | **DeBERTa_v3** | 0.8738 | 0.9076 | **0.8373** | **0.9797** | **0.8621** | 0.4696 | 0.9420 |
+| **CNN + CRF** | **RoBERTa** | 0.8738 | 0.9076 | **0.8144** | 0.9764 | 0.8408 | 0.4696 | 0.9420 |
+| **BiLSTM + CRF** | **DeBERTa_v3** | 0.9623 | 0.9747 | **0.7895** | 0.9719 | 0.8321 | 0.8157 | 0.9841 |
+| **BiLSTM + CRF** | **RoBERTa** | 0.9623 | 0.9747 | 0.7822 | 0.9712 | 0.8250 | 0.8157 | 0.9841 |
+| **BiGRU + CRF** | **RoBERTa** | **0.9644** | **0.9759** | 0.7774 | 0.9704 | 0.8226 | **0.8194** | **0.9850** |
+| **BiGRU + CRF** | **DeBERTa_v3** | **0.9644** | **0.9759** | 0.7763 | 0.9701 | 0.8200 | **0.8194** | **0.9850** |
+| **BiRNN + CRF** | **DeBERTa_v3** | 0.9451 | 0.9627 | 0.7437 | 0.9658 | 0.8009 | 0.7435 | 0.9768 |
+| **BiRNN + CRF** | **RoBERTa** | 0.9451 | 0.9627 | 0.7371 | 0.9665 | 0.8048 | 0.7435 | 0.9768 |
+
+*DeBERTa-v3 coupled with CNN+CRF yields superior sentence break detection, while BiGRU+CRF coupled with RoBERTa/DeBERTa-v3 achieves the highest overall token reconstruction fidelity.*
+
+### 2. Telugu Word Segmentation Benchmark (Complete Dataset, Test Split)
+
+Evaluated on 2,172 test sentences from the production Telugu corpus:
+
+| Tagging State | Neural Encoder | Macro F1 | Accuracy | Precision | Recall | BLEU | BERTScore F1 |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **2-State** | **GRU** | **0.7574** | **0.8150** | 0.7892 | 0.7538 | 0.2354 | 0.8444 |
+| **2-State** | **BiLSTM** | 0.7522 | 0.8091 | 0.7792 | 0.7485 | 0.2458 | 0.8486 |
+| **2-State** | **CNN** | 0.6417 | 0.7459 | 0.7009 | 0.6401 | 0.1802 | 0.8756 |
+| **2-State** | **RNN** | 0.6350 | 0.7378 | 0.6961 | 0.6323 | 0.1704 | 0.8747 |
+| **4-State (BIES)** | **GRU** | **0.6807** | **0.7257** | 0.6928 | 0.6856 | 0.2673 | 0.8291 |
+| **4-State (BIES)** | **BiLSTM** | 0.6698 | 0.7157 | 0.6806 | 0.6756 | 0.2770 | 0.8393 |
+| **4-State (BIES)** | **CNN** | 0.5565 | 0.6051 | 0.5692 | 0.5614 | **0.3121** | **0.8895** |
+| **4-State + CRF** | **GRU** | **0.6239** | **0.6674** | 0.6280 | 0.6300 | 0.2530 | 0.8244 |
+| **4-State + CRF** | **BiLSTM** | 0.5900 | 0.6288 | 0.5946 | 0.5982 | 0.2512 | 0.8239 |
+
+---
+
+## Modules and Navigation
+
+- [English Phase 2 Overview](English/README.md)
+  - [English Datasets](English/Dataset/README.md)
+  - [English Sentence Segmentation (16 Models)](English/Sentence%20Segmentation/README.md)
+  - [English Word Segmentation](English/Word%20Segmentation/README.md)
+    - [50-Character Line-Level Word Segmentation](English/Word%20Segmentation/50_Characters/README.md)
+    - [Sentence-Level Word Segmentation Baseline](English/Word%20Segmentation/Sentence_Level/README.md)
+- [Telugu Phase 2 Overview](Telugu/README.md)
+  - [Telugu Complete Dataset Module](Telugu/Complete%20Dataset/README.md)
+    - [Detailed Results and Linguistic Analysis](Telugu/Complete%20Dataset/Detailed%20Results%20and%20Analysis/README.md)
+    - [Notebooks and Pre-Trained Weights](Telugu/Complete%20Dataset/notebooks%20and%20code%20files/README.md)
+    - [Raw Predictions](Telugu/Complete%20Dataset/model%20predictions%20without%20metrics/README.md)
+    - [Results Summaries](Telugu/Complete%20Dataset/results%20summaries/README.md)
+  - [Telugu Sample Dataset Prototyping](Telugu/sample%20dataset%20work/README.md)
